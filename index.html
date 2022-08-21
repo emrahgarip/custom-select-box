@@ -19,7 +19,7 @@
             <img src="assets/images/chevron_left.svg" alt="" class="icon">
           </div>
           <!-- SEARCH AND OPTION LİST WRAPPER -->
-          <div class="content active">
+          <div class="content">
             <!-- SEARCH -->
             <div class="form-group">
               <input type="search" class="search" placeholder="Search">
@@ -49,5 +49,15 @@
       <!-- ENDING CUSTOM SELECT BOX IN THIS LINE -->
     </div>
   </div>
+
+  <script>
+    const button = document.querySelector(".selected-item");
+    const content = document.querySelector(".content");
+
+    button.addEventListener('click', (e) => {
+      content.classList.toggle("active")
+      e.preventDefault();
+    })
+  </script>
 </body>
 </html>

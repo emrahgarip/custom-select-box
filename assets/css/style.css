@@ -37,6 +37,7 @@ body {
 .custom-select-box {
   width: 250px;
   height: auto;
+  position: relative;
 }
 
 .selected-item {
@@ -59,6 +60,9 @@ body {
 .content.active {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 40px;
+  width: 100%;
 }
 
 .search {
