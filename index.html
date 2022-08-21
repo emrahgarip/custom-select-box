@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Select Box</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h1 class="title">Custom Select Box</h1>
+      <!-- STARTING CUSTOM SELECT BOX IN THIS LINE -->
+        <div class="custom-select-box">
+          <!-- SELECTED ITEM -->
+          <div class="selected-item">
+            <span class="selected-item-text">Selected Item</span>
+            <img src="assets/images/chevron_left.svg" alt="" class="icon">
+          </div>
+          <!-- SEARCH AND OPTION LİST WRAPPER -->
+          <div class="content active">
+            <!-- SEARCH -->
+            <div class="form-group">
+              <input type="search" class="search" placeholder="Search">
+            </div>
+            <ul class="options">
+              <li class="options-item">
+                <label for="item-1" class="item">
+                  <input type="radio" id="item-1" class="option" value="Select Item 1">
+                  <span>Select Item 1</span>
+                </label>
+              </li>
+              <li class="options-item">
+                <label for="item-2" class="item">
+                  <input type="radio" id="item-2" class="option" value="Select Item 2">
+                  <span>Select Item 2</span>
+                </label>
+              </li>
+              <li class="options-item">
+                <label for="item-3" class="item">
+                  <input type="radio" id="item-3" class="option" value="Select Item 3">
+                  <span>Select Item 3</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <!-- ENDING CUSTOM SELECT BOX IN THIS LINE -->
+    </div>
+  </div>
+</body>
+</html>
