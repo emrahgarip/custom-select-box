@@ -15,7 +15,7 @@
         <div class="custom-select-box">
           <!-- SELECTED ITEM -->
           <div class="selected-item">
-            <span class="selected-item-text">Select Item</span>
+            <span class="selected-item-text">Choose Option</span>
             <img src="assets/images/chevron_left.svg" alt="" class="icon">
           </div>
           <!-- SEARCH AND OPTION LİST WRAPPER -->
@@ -25,6 +25,12 @@
               <input type="search" class="search" placeholder="Search">
             </div>
             <ul class="options">
+              <li class="options-item">
+                <label for="choose-default" class="item">
+                  <input type="radio" id="choose-default" name="choose" class="option" value="Choose Option">
+                  <span class="select-value">Choose Option</span>
+                </label>
+              </li>
               <li class="options-item">
                 <label for="item-1" class="item">
                   <input type="radio" id="item-1" name="choose" class="option" value="Html & CSS">
@@ -69,10 +75,10 @@
         for (const option of options) {
           if(option.checked) {
             selected = option.value;
+            document.querySelector('.selected-item-text').textContent = selected;
           }
           
         }
-        document.querySelector('.selected-item-text').textContent = selected;
       })
 
       let val;
