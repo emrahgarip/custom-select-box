@@ -27,20 +27,20 @@
             <ul class="options">
               <li class="options-item">
                 <label for="item-1" class="item">
-                  <input type="radio" id="item-1" name="choose" class="option" value="Select Item 1">
-                  <span class="select-value">Select Item 1</span>
+                  <input type="radio" id="item-1" name="choose" class="option" value="Html & CSS">
+                  <span class="select-value">Html & CSS</span>
                 </label>
               </li>
               <li class="options-item">
                 <label for="item-2" class="item">
-                  <input type="radio" id="item-2" name="choose" class="option" value="Select Item 2">
-                  <span class="select-value">Select Item 2</span>
+                  <input type="radio" id="item-2" name="choose" class="option" value="Frontend Dev">
+                  <span class="select-value">Frontend Dev</span>
                 </label>
               </li>
               <li class="options-item">
                 <label for="item-3" class="item">
-                  <input type="radio" id="item-3" name="choose" class="option" value="Select Item 3">
-                  <span class="select-value">Select Item 3</span>
+                  <input type="radio" id="item-3" name="choose" class="option" value="JavaScript and Vue JS">
+                  <span class="select-value">JavaScript and Vue JS</span>
                 </label>
               </li>
             </ul>
@@ -51,39 +51,38 @@
   </div>
 
   <script>
-    //toggle (actually this is not button this is div element)
     const button = document.querySelector(".selected-item");
-    //content
     const content = document.querySelector(".content");
 
-    //.selected-item click event
     button.addEventListener('click', (e) => {
-      //add toggle class
       content.classList.toggle("active")
       e.preventDefault();
     })
 
-    //all radio button
     const options = document.querySelectorAll('.option');
-    //all li tag
     const items = document.querySelectorAll('.options-item');
+    const search = document.querySelector('.search');
 
     for (let i = 0; i < items.length; i++) {
-      //li tag click event
       items[i].addEventListener('click', () => {
-        // defined variable name with let keyword
         let selected;
-        //radio button loop
         for (const option of options) {
-          //when click items[i], if option checked equal true then get text value
           if(option.checked) {
             selected = option.value;
           }
           
         }
-
-        //changes value of selected-item-text class
         document.querySelector('.selected-item-text').textContent = selected;
+      })
+
+      let val;
+      search.addEventListener('keyup', (event) => {
+       val = items[i].textContent.trim().toLowerCase();
+       if(val.includes(event.target.value.toLowerCase())) {
+        items[i].style = ""
+       } else {
+        items[i].style = "display: none;"
+       }
       })
     }
 
