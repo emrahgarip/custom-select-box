@@ -15,7 +15,7 @@
         <div class="custom-select-box">
           <!-- SELECTED ITEM -->
           <div class="selected-item">
-            <span class="selected-item-text">Selected Item</span>
+            <span class="selected-item-text">Select Item</span>
             <img src="assets/images/chevron_left.svg" alt="" class="icon">
           </div>
           <!-- SEARCH AND OPTION LİST WRAPPER -->
@@ -27,20 +27,20 @@
             <ul class="options">
               <li class="options-item">
                 <label for="item-1" class="item">
-                  <input type="radio" id="item-1" class="option" value="Select Item 1">
-                  <span>Select Item 1</span>
+                  <input type="radio" id="item-1" name="choose" class="option" value="Select Item 1">
+                  <span class="select-value">Select Item 1</span>
                 </label>
               </li>
               <li class="options-item">
                 <label for="item-2" class="item">
-                  <input type="radio" id="item-2" class="option" value="Select Item 2">
-                  <span>Select Item 2</span>
+                  <input type="radio" id="item-2" name="choose" class="option" value="Select Item 2">
+                  <span class="select-value">Select Item 2</span>
                 </label>
               </li>
               <li class="options-item">
                 <label for="item-3" class="item">
-                  <input type="radio" id="item-3" class="option" value="Select Item 3">
-                  <span>Select Item 3</span>
+                  <input type="radio" id="item-3" name="choose" class="option" value="Select Item 3">
+                  <span class="select-value">Select Item 3</span>
                 </label>
               </li>
             </ul>
@@ -51,13 +51,47 @@
   </div>
 
   <script>
+    //toggle (actually this is not button this is div element)
     const button = document.querySelector(".selected-item");
+    //content
     const content = document.querySelector(".content");
 
+    //.selected-item click event
     button.addEventListener('click', (e) => {
+      //add toggle class
       content.classList.toggle("active")
       e.preventDefault();
     })
+
+    //all radio button
+    const options = document.querySelectorAll('.option');
+    //all li tag
+    const items = document.querySelectorAll('.options-item');
+
+    for (let i = 0; i < items.length; i++) {
+      //li tag click event
+      items[i].addEventListener('click', () => {
+        // defined variable name with let keyword
+        let selected;
+        //radio button loop
+        for (const option of options) {
+          //when click items[i], if option checked equal true then get text value
+          if(option.checked) {
+            selected = option.value;
+          }
+          
+        }
+
+        //changes value of selected-item-text class
+        document.querySelector('.selected-item-text').textContent = selected;
+      })
+    }
+
+    
+
+    
+    
+
   </script>
 </body>
 </html>
